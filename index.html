@@ -19,7 +19,7 @@
   --line:#30322c;--grid:#242620;--accent:#f0c72f;--accent-ink:#191400;--plot:#090a08;
   --plot-ink:#f6f2df;--plot-grid:#292b26;--danger:#ff7d72;--shadow:0 18px 48px rgba(0,0,0,.34);
 }}
-*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;font-family:Manrope,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+*{box-sizing:border-box}[hidden]{display:none!important}html{background:var(--bg)}body{margin:0;font-family:Manrope,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
 button,input,select{font:inherit}button{color:inherit}.page{max-width:1440px;margin:auto;padding:clamp(18px,3vw,42px)}
 .intro{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(270px,.6fr);gap:32px;align-items:end;margin-bottom:28px}
 .intro h1{font-size:clamp(34px,5.6vw,74px);line-height:.98;letter-spacing:-.055em;margin:0;max-width:900px}
@@ -44,8 +44,9 @@ button,input,select{font:inherit}button{color:inherit}.page{max-width:1440px;mar
 .steps{display:grid;gap:9px}.step{display:grid;grid-template-columns:22px 1fr;gap:9px;font-size:12px;line-height:1.5;color:#c8c7bd}.step b{font:11px 'DM Mono',monospace;color:#8d8f86;border:1px solid #474940;width:20px;height:20px;display:grid;place-items:center}.step code{font:11px 'DM Mono',monospace;color:#f0c72f;overflow-wrap:anywhere}
 .error{color:#ff8c82;font:13px 'DM Mono',monospace;min-height:18px;margin-top:8px}
 .legend{display:flex;gap:18px;flex-wrap:wrap;font:11px 'DM Mono',monospace;color:#aaa99f;margin-top:14px}.legend span:before{content:"";display:inline-block;width:14px;height:2px;background:var(--accent);vertical-align:middle;margin-right:6px}.legend .secondary:before{background:#74c6da}.legend .tertiary:before{background:#d8d7cf}.legend [hidden]{display:none}
-@media(max-width:820px){.page{padding:14px}.intro{grid-template-columns:1fr;gap:12px;margin:14px 0 22px}.intro h1{font-size:42px}.layout{grid-template-columns:1fr}.controls{border-right:0;border-bottom:1px solid var(--line)}.help{display:none}.stage{min-height:650px}.canvas-wrap{min-height:380px}.explain{grid-template-columns:1fr}.stage-top{align-items:flex-start}.sim-btn span{display:none}.sim-btn{padding:10px}.mode-tabs{grid-template-columns:repeat(3,1fr)} }
-@media(max-width:480px){.page{padding:0 0 24px}.intro{padding:20px 18px 0}.intro h1{font-size:37px}.layout{border-left:0;border-right:0}.controls{padding:17px}.mode-btn{text-align:center;font-size:11px;padding:9px 4px}.stage-top,.explain{padding-left:17px;padding-right:17px}.canvas-wrap{min-height:340px}.result{font-size:18px}}
+.linear-panel{display:none;position:relative;z-index:1;min-height:0}.stage.linear-mode{grid-template-rows:auto minmax(0,1fr)}.stage.linear-mode .canvas-wrap,.stage.linear-mode .explain{display:none}.stage.linear-mode .linear-panel{display:grid;grid-template-columns:190px minmax(0,1fr);min-height:620px}.course-nav{border-right:1px solid var(--plot-grid);padding:16px 12px;background:rgba(9,10,8,.45);display:flex;flex-direction:column;gap:5px}.course-nav button{border:0;border-left:2px solid transparent;background:transparent;color:#aaa99f;padding:9px 10px;text-align:left;font-size:11px;line-height:1.35;cursor:pointer}.course-nav button:hover{color:var(--plot-ink)}.course-nav button.active{border-left-color:var(--accent);color:var(--accent);background:rgba(240,199,47,.07)}.course-scroll{overflow:auto;padding:26px clamp(20px,3vw,42px) 38px}.lesson{max-width:840px}.lesson-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:24px}.lesson-number{font:11px 'DM Mono',monospace;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}.lesson h2{font-size:clamp(27px,3vw,42px);line-height:1.03;letter-spacing:-.035em;margin:7px 0 8px}.lesson-lead{color:#b9bab2;line-height:1.65;margin:0;max-width:680px}.lesson-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.lesson-card{border-top:1px solid #44463e;padding:16px 0 4px}.lesson-card.wide{grid-column:1/-1}.lesson-card h3{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#9c9d94;margin:0 0 10px}.lesson-card p,.lesson-card li{font-size:13px;line-height:1.65;color:#d1d0c8}.lesson-card ul,.lesson-card ol{padding-left:20px;margin:0}.formula{font:14px 'DM Mono',monospace;color:var(--accent);background:#11120f;border:1px solid #34362f;padding:13px 14px;margin:9px 0;overflow-wrap:anywhere}.worked{display:grid;gap:8px}.worked b{color:var(--plot-ink)}.course-progress{font:11px 'DM Mono',monospace;color:#898b82;white-space:nowrap}.matrix-tools{display:grid;grid-template-columns:1fr 1fr;gap:8px}.matrix-tools input{width:100%;min-width:0;border:1px solid var(--line);background:var(--panel2);color:var(--ink);padding:8px;font-family:'DM Mono',monospace}.matrix-tools .vector-field{border-color:var(--accent)}.linear-result{font:11px/1.65 'DM Mono',monospace;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}.linear-result strong{color:var(--ink)}.linear-visual{position:relative;height:240px;border:1px solid #34362f;background:#0d0e0c;margin-top:12px}.linear-visual canvas{position:absolute;inset:0;width:100%;height:100%}.linear-note{font-size:11px;color:#92948b;margin-top:8px;line-height:1.5}
+@media(max-width:820px){.page{padding:14px}.intro{grid-template-columns:1fr;gap:12px;margin:14px 0 22px}.intro h1{font-size:42px}.layout{grid-template-columns:1fr}.controls{border-right:0;border-bottom:1px solid var(--line)}.help{display:none}.stage{min-height:650px}.canvas-wrap{min-height:380px}.explain{grid-template-columns:1fr}.stage-top{align-items:flex-start}.sim-btn span{display:none}.sim-btn{padding:10px}.mode-tabs{grid-template-columns:repeat(3,1fr)}.stage.linear-mode .linear-panel{grid-template-columns:1fr;min-height:0}.course-nav{border-right:0;border-bottom:1px solid var(--plot-grid);display:grid;grid-template-columns:repeat(3,1fr);padding:10px}.course-nav button{border-left:0;border-bottom:2px solid transparent;padding:8px 5px}.course-nav button.active{border-left-color:transparent;border-bottom-color:var(--accent)}.course-scroll{overflow:visible}.lesson-grid{grid-template-columns:1fr}.lesson-card.wide{grid-column:auto}}
+@media(max-width:480px){.page{padding:0 0 24px}.intro{padding:20px 18px 0}.intro h1{font-size:37px}.layout{border-left:0;border-right:0}.controls{padding:17px}.mode-btn{text-align:center;font-size:11px;padding:9px 4px}.stage-top,.explain{padding-left:17px;padding-right:17px}.canvas-wrap{min-height:340px}.result{font-size:18px}.course-nav{grid-template-columns:repeat(2,1fr)}.course-scroll{padding:22px 17px 32px}.lesson-head{display:block}.course-progress{margin-top:10px}.lesson h2{font-size:30px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
 </head>
@@ -53,7 +54,7 @@ button,input,select{font:inherit}button{color:inherit}.page{max-width:1440px;mar
 <main class="page">
   <section class="intro">
     <h1>Comprends une formule en la voyant bouger.</h1>
-    <p>Écris une fonction, une équation, une dérivée, une intégrale ou une limite. Le graphique et le raisonnement se construisent ensemble.</p>
+    <p>Écris une fonction, une équation, une dérivée, une intégrale ou une limite. Explore aussi l’algèbre linéaire, des vecteurs jusqu’à la diagonalisation.</p>
   </section>
   <section class="layout">
     <aside class="controls">
@@ -63,26 +64,43 @@ button,input,select{font:inherit}button{color:inherit}.page{max-width:1440px;mar
         <button class="mode-btn" data-mode="derivative">Dérivée</button>
         <button class="mode-btn" data-mode="integral">Intégrale</button>
         <button class="mode-btn" data-mode="limit">Limite</button>
+        <button class="mode-btn" data-mode="linear">Algèbre linéaire</button>
       </nav>
-      <div class="control-block">
+      <div class="control-block" id="expressionBlock">
         <label id="expressionLabel" for="expression">Fonction f(x)</label>
         <div class="expr-wrap"><span class="expr-prefix" id="prefix">f(x)=</span><input class="expr" id="expression" value="sin(x) + 0.3*x" spellcheck="false" autocomplete="off" aria-describedby="error"></div>
         <div class="error" id="error" role="status"></div>
         <div class="quick" id="quickExamples"></div>
       </div>
       <div class="params" id="params"></div>
+      <div class="control-block" id="linearControls" hidden>
+        <label>Matrice A et vecteur v</label>
+        <div class="matrix-tools" aria-label="Laboratoire matriciel 2 par 2">
+          <input id="m11" type="number" step="any" value="2" aria-label="Coefficient a onze">
+          <input id="m12" type="number" step="any" value="1" aria-label="Coefficient a douze">
+          <input id="m21" type="number" step="any" value="1" aria-label="Coefficient a vingt et un">
+          <input id="m22" type="number" step="any" value="2" aria-label="Coefficient a vingt-deux">
+          <input class="vector-field" id="vx" type="number" step="any" value="1" aria-label="Coordonnée x du vecteur">
+          <input class="vector-field" id="vy" type="number" step="any" value="1" aria-label="Coordonnée y du vecteur">
+        </div>
+        <div class="linear-result" id="linearResult"></div>
+      </div>
       <div class="rulebook" id="rulebook" hidden>
         <div class="rulebook-title">Règles reconnues</div>
         <div class="rulebook-list"><span>Somme</span><span>Produit</span><span>Quotient</span><span>Chaîne</span><span>Puissance</span><span>Trigonométrie</span><span>ln / exp</span></div>
       </div>
       <button class="solve" id="solve">Calculer & visualiser</button>
-      <div class="help"><strong>Syntaxe acceptée</strong><br>Utilise <code>*</code> pour multiplier et <code>^</code> pour les puissances.<br>Fonctions : sin, cos, tan, arcsin, arccos, arctan (ou asin, acos, atan), sqrt, abs, ln, log, exp.</div>
+      <div class="help" id="help"><strong>Syntaxe acceptée</strong><br>Utilise <code>*</code> pour multiplier et <code>^</code> pour les puissances.<br>Fonctions : sin, cos, tan, arcsin, arccos, arctan (ou asin, acos, atan), sqrt, abs, ln, log, exp.</div>
     </aside>
     <section class="stage" aria-live="polite">
       <header class="stage-top">
         <div><div class="stage-kicker" id="stageKicker">Explorateur de fonction</div><div class="stage-title" id="stageTitle">f(x) = sin(x) + 0.3·x</div></div>
         <button class="sim-btn" id="simulate" aria-label="Lancer la simulation"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span>Simuler</span></button>
       </header>
+      <div class="linear-panel" id="linearPanel">
+        <nav class="course-nav" id="courseNav" aria-label="Chapitres du cours d’algèbre linéaire"></nav>
+        <div class="course-scroll"><article class="lesson" id="lesson"></article></div>
+      </div>
       <div class="canvas-wrap"><canvas id="graph" aria-label="Graphique interactif de la fonction"></canvas><div class="coord" id="coord">x 0.00 · y 0.00</div></div>
       <footer class="explain">
         <div><div class="result-label" id="resultLabel">Lecture</div><div class="result" id="result">f(0) = 0</div><div class="legend"><span>fonction</span><span class="secondary" id="legendSecond">point observé</span><span class="tertiary" id="legendThird" hidden>tangente</span></div></div>
@@ -99,9 +117,66 @@ var MODES={
  equation:{label:'Équation',prefix:'',title:'Résolution graphique',value:'x^2 - 4 = 0',examples:['x^2 - 4 = 0','2*x + 3 = 9','cos(x) = x','x^3 - x = 0'],params:[]},
  derivative:{label:'Fonction à dériver',prefix:'f(x)=',title:'Dérivation symbolique',value:'(2-3*x^2)*sqrt(x)',examples:['(2-3*x^2)*sqrt(x)','5*(2-x^3)^4','1/(x^2-3*x+4)','sqrt(cos(x))','arctan(x)'],params:[['x0','Vérifier en x','1']]},
  integral:{label:'Fonction à intégrer',prefix:'f(x)=',title:'Aire sous la courbe',value:'x^2',examples:['x^2','sin(x)','exp(-x^2)','2*x + 1'],params:[['a','Borne a','0'],['b','Borne b','3']]},
- limit:{label:'Fonction de la limite',prefix:'f(x)=',title:'Approche d’une limite',value:'sin(x)/x',examples:['sin(x)/x','(x^2-1)/(x-1)','1/x','sqrt(abs(x))'],params:[['x0','x tend vers','0']]}
+ limit:{label:'Fonction de la limite',prefix:'f(x)=',title:'Approche d’une limite',value:'sin(x)/x',examples:['sin(x)/x','(x^2-1)/(x-1)','1/x','sqrt(abs(x))'],params:[['x0','x tend vers','0']]},
+ linear:{label:'Algèbre linéaire',prefix:'',title:'Cours complet · algèbre linéaire',value:'',examples:[],params:[]}
 };
-var mode='function', ast=null, fn=null, symbolic=null, derivativeTrace=[], equationParts=null, animation=null, simValue=0, bars=18;
+var LINEAR_CHAPTERS=[
+ {short:'01 · Vecteurs',title:'Vecteurs et géométrie',lead:'Un vecteur décrit une direction, un sens et une longueur. Les coordonnées permettent de calculer avec la géométrie.',html:`
+  <div class="lesson-card"><h3>Notions essentielles</h3><ul><li>Dans ℝⁿ, un vecteur est une liste ordonnée de n réels.</li><li>Addition et multiplication scalaire se font coordonnée par coordonnée.</li><li>Une combinaison linéaire s’écrit α₁v₁ + … + αₖvₖ.</li></ul></div>
+  <div class="lesson-card"><h3>Norme et produit scalaire</h3><div class="formula">‖v‖ = √(v₁² + … + vₙ²)<br>u·v = Σ uᵢvᵢ<br>cos θ = (u·v)/(‖u‖‖v‖)</div><p>u et v sont orthogonaux exactement quand u·v = 0.</p></div>
+  <div class="lesson-card wide"><h3>Exemple guidé</h3><div class="worked"><p><b>Soit</b> u=(1,2), v=(3,−1). Calculer 2u−v et u·v.</p><div class="formula">2u−v = (2,4)−(3,−1) = (−1,5)<br>u·v = 1·3 + 2·(−1) = 1</div><p>Le produit scalaire n’est pas nul : les vecteurs ne sont pas orthogonaux.</p></div></div>
+  <div class="lesson-card"><h3>À maîtriser</h3><p>Coordonnées, norme, distance, angle, projection et interprétation géométrique d’une combinaison linéaire.</p></div>
+  <div class="lesson-card"><h3>Piège fréquent</h3><p>La norme n’est pas linéaire : en général ‖u+v‖ ≠ ‖u‖+‖v‖.</p></div>`},
+ {short:'02 · Matrices',title:'Matrices et opérations',lead:'Une matrice organise une transformation linéaire. Ses colonnes montrent où partent les vecteurs de la base canonique.',html:`
+  <div class="lesson-card"><h3>Vocabulaire</h3><ul><li>A∈ℝᵐˣⁿ possède m lignes et n colonnes.</li><li>A+B exige les mêmes dimensions.</li><li>AB existe si le nombre de colonnes de A égale le nombre de lignes de B.</li></ul></div>
+  <div class="lesson-card"><h3>Produit matriciel</h3><div class="formula">(AB)ᵢⱼ = Σₖ aᵢₖbₖⱼ<br>Av = v₁·col₁(A)+…+vₙ·colₙ(A)</div><p>Le produit encode une composition : AB applique d’abord B, puis A.</p></div>
+  <div class="lesson-card wide"><h3>Exemple guidé</h3><div class="formula">A=[[1,2],[0,3]], B=[[2,0],[1,−1]]<br>AB=[[4,−2],[3,−3]] mais BA=[[2,4],[1,−1]]</div><p>En général, AB ≠ BA : le produit matriciel n’est pas commutatif.</p></div>
+  <div class="lesson-card"><h3>Matrices particulières</h3><p>Identité I, diagonale, triangulaire, symétrique Aᵀ=A et orthogonale QᵀQ=I.</p></div>
+  <div class="lesson-card"><h3>Transposée</h3><div class="formula">(AB)ᵀ = BᵀAᵀ</div><p>L’ordre s’inverse.</p></div>`},
+ {short:'03 · Systèmes',title:'Systèmes linéaires et pivot de Gauss',lead:'Résoudre Ax=b revient à transformer la matrice augmentée [A|b] sans changer l’ensemble des solutions.',html:`
+  <div class="lesson-card"><h3>Opérations élémentaires</h3><ol><li>Échanger deux lignes.</li><li>Multiplier une ligne par un réel non nul.</li><li>Ajouter à une ligne un multiple d’une autre.</li></ol></div>
+  <div class="lesson-card"><h3>Formes échelonnées</h3><p>Un pivot est le premier coefficient non nul d’une ligne. En forme échelonnée réduite, chaque pivot vaut 1 et est seul dans sa colonne.</p><div class="formula">rang(A) = nombre de pivots</div></div>
+  <div class="lesson-card wide"><h3>Exemple guidé</h3><div class="formula">x + y = 3<br>2x − y = 0<br><br>[1 1 | 3] → [1 1 | 3]<br>[2 −1| 0]   [0 −3|−6]</div><p>On obtient y=2 puis x=1. La solution est unique : (1,2).</p></div>
+  <div class="lesson-card"><h3>Trois cas</h3><ul><li>Un pivot par inconnue : solution unique.</li><li>Variable libre : infinité de solutions.</li><li>Ligne [0 … 0 | c], c≠0 : aucune solution.</li></ul></div>
+  <div class="lesson-card"><h3>Lecture géométrique</h3><p>Deux équations dans ℝ² représentent deux droites : sécantes, confondues ou parallèles.</p></div>`},
+ {short:'04 · Déterminant',title:'Déterminant et matrice inverse',lead:'Le déterminant mesure le facteur d’aire ou de volume signé d’une transformation. Zéro signifie écrasement d’une dimension.',html:`
+  <div class="lesson-card"><h3>Formules</h3><div class="formula">det [[a,b],[c,d]] = ad−bc<br>det(AB)=det(A)det(B)<br>det(Aᵀ)=det(A)</div><p>Échanger deux lignes change le signe du déterminant.</p></div>
+  <div class="lesson-card"><h3>Inversibilité</h3><div class="formula">A⁻¹ = 1/(ad−bc) [[d,−b],[−c,a]]</div><p>Équivalences : det(A)≠0 ⇔ A inversible ⇔ rang(A)=n ⇔ Ax=0 a seulement la solution x=0.</p></div>
+  <div class="lesson-card wide"><h3>Exemple guidé</h3><div class="formula">A=[[2,1],[1,2]], det(A)=4−1=3<br>A⁻¹=(1/3)[[2,−1],[−1,2]]</div><p>Vérification : AA⁻¹=I. Dans le laboratoire, cette matrice agrandit l’aire d’un facteur 3.</p></div>
+  <div class="lesson-card"><h3>Développement</h3><p>En dimension n, développe par cofacteurs sur la ligne ou la colonne contenant le plus de zéros.</p></div>
+  <div class="lesson-card"><h3>Piège fréquent</h3><p>A⁻¹ n’existe pas quand det(A)=0. On ne “divise” jamais par une matrice.</p></div>`},
+ {short:'05 · Espaces',title:'Espaces vectoriels, bases et dimension',lead:'Une base est un système de coordonnées : elle engendre tout l’espace sans redondance.',html:`
+  <div class="lesson-card"><h3>Sous-espace</h3><p>F⊂E est un sous-espace si 0∈F et si F est stable par addition et multiplication scalaire.</p><div class="formula">Span(v₁,…,vₖ) = {Σ αᵢvᵢ}</div></div>
+  <div class="lesson-card"><h3>Indépendance</h3><p>v₁,…,vₖ sont libres si Σαᵢvᵢ=0 implique α₁=…=αₖ=0. Sinon, un vecteur est combinaison des autres.</p></div>
+  <div class="lesson-card wide"><h3>Base et dimension</h3><div class="formula">Base = famille libre + génératrice<br>dim(E) = nombre de vecteurs d’une base</div><p>Dans ℝ³, trois vecteurs forment une base si le déterminant de la matrice qui les prend comme colonnes est non nul.</p></div>
+  <div class="lesson-card"><h3>Coordonnées</h3><p>Si B=(b₁,…,bₙ), tout v s’écrit de façon unique v=Σ[v]ᴮᵢbᵢ.</p></div>
+  <div class="lesson-card"><h3>Exemple</h3><p>(1,0,1) et (0,1,1) engendrent un plan de ℝ³. Ils sont libres, donc forment une base de ce plan, de dimension 2.</p></div>`},
+ {short:'06 · Applications',title:'Applications linéaires, noyau et image',lead:'Une application linéaire respecte les combinaisons : T(αu+βv)=αT(u)+βT(v). Une matrice la représente dans des bases choisies.',html:`
+  <div class="lesson-card"><h3>Noyau et image</h3><div class="formula">Ker(T)={v : T(v)=0}<br>Im(T)={T(v) : v∈E}</div><p>Le noyau mesure ce qui est perdu ; l’image mesure ce qui peut être atteint.</p></div>
+  <div class="lesson-card"><h3>Théorème du rang</h3><div class="formula">dim Ker(T) + rang(T) = dim(E)</div><p>T est injective si Ker(T)={0}. Elle est surjective si Im(T)=F.</p></div>
+  <div class="lesson-card wide"><h3>Exemple guidé</h3><p>T:ℝ³→ℝ², T(x,y,z)=(x+y, y+z).</p><div class="formula">A=[[1,1,0],[0,1,1]]<br>Ker(T)=Span((−1,1,−1))<br>rang(T)=2, nullité=1, donc 2+1=3</div></div>
+  <div class="lesson-card"><h3>Composition</h3><p>La matrice de S∘T est [S][T]. Pour changer de base, on utilise P⁻¹AP.</p></div>
+  <div class="lesson-card"><h3>Isomorphisme</h3><p>Une application linéaire bijective est un isomorphisme : les espaces ont alors la même structure et la même dimension.</p></div>`},
+ {short:'07 · Valeurs propres',title:'Valeurs propres et diagonalisation',lead:'Un vecteur propre conserve sa direction sous l’action de A. La valeur propre indique son facteur d’étirement.',html:`
+  <div class="lesson-card"><h3>Définition</h3><div class="formula">Av=λv, avec v≠0<br>det(A−λI)=0</div><p>Les racines du polynôme caractéristique sont les valeurs propres.</p></div>
+  <div class="lesson-card"><h3>Diagonalisation</h3><div class="formula">A=PDP⁻¹<br>Aᵏ=PDᵏP⁻¹</div><p>A est diagonalisable si elle possède une base de vecteurs propres.</p></div>
+  <div class="lesson-card wide"><h3>Exemple guidé</h3><p>Pour A=[[2,1],[1,2]] :</p><div class="formula">det(A−λI)=(2−λ)²−1=(λ−1)(λ−3)<br>λ₁=1 avec v₁=(1,−1)<br>λ₂=3 avec v₂=(1,1)</div><p>Les deux directions propres sont visibles dans le laboratoire.</p></div>
+  <div class="lesson-card"><h3>Trace et déterminant</h3><div class="formula">tr(A)=Σλᵢ<br>det(A)=Πλᵢ</div><p>Avec multiplicités algébriques.</p></div>
+  <div class="lesson-card"><h3>Attention</h3><p>Une matrice peut ne pas être diagonalisable si elle n’a pas assez de vecteurs propres indépendants.</p></div>`},
+ {short:'08 · Orthogonalité',title:'Orthogonalité, projections et Gram–Schmidt',lead:'Les bases orthonormales simplifient les calculs : les coordonnées deviennent de simples produits scalaires.',html:`
+  <div class="lesson-card"><h3>Projection</h3><div class="formula">projᵤ(v) = (v·u)/(u·u) · u</div><p>Le résidu v−projᵤ(v) est orthogonal à u.</p></div>
+  <div class="lesson-card"><h3>Gram–Schmidt</h3><div class="formula">w₁=v₁<br>w₂=v₂−proj_w₁(v₂)<br>eᵢ=wᵢ/‖wᵢ‖</div><p>Le procédé transforme une famille libre en base orthonormale du même sous-espace.</p></div>
+  <div class="lesson-card wide"><h3>Moindres carrés</h3><p>Quand Ax=b est incompatible, on cherche x̂ minimisant ‖Ax−b‖.</p><div class="formula">AᵀA x̂ = Aᵀb<br>x̂=(AᵀA)⁻¹Aᵀb si les colonnes sont libres</div><p>Géométriquement, Ax̂ est la projection orthogonale de b sur Im(A).</p></div>
+  <div class="lesson-card"><h3>Matrice orthogonale</h3><p>QᵀQ=I, donc Q⁻¹=Qᵀ. Elle conserve longueurs, angles et produit scalaire.</p></div>
+  <div class="lesson-card"><h3>Symétrie</h3><p>Toute matrice réelle symétrique possède une base orthonormale de vecteurs propres.</p></div>`},
+ {short:'09 · Décompositions',title:'Décompositions LU, QR et SVD',lead:'Décomposer une matrice transforme un problème difficile en opérations plus simples et numériquement stables.',html:`
+  <div class="lesson-card"><h3>LU</h3><div class="formula">A=LU</div><p>L est triangulaire inférieure, U supérieure. On résout Ly=b puis Ux=y. Avec pivotement : PA=LU.</p></div>
+  <div class="lesson-card"><h3>QR</h3><div class="formula">A=QR</div><p>Q a des colonnes orthonormales et R est triangulaire. QR sert aux moindres carrés et au calcul numérique des valeurs propres.</p></div>
+  <div class="lesson-card wide"><h3>SVD</h3><div class="formula">A=UΣVᵀ</div><p>Toute matrice réelle admet une SVD. Les valeurs singulières σᵢ sont positives ou nulles et classées. Le rang est le nombre de σᵢ non nulles.</p><p>Interprétation : rotation/réflexion par Vᵀ, étirement par Σ, puis rotation/réflexion par U.</p></div>
+  <div class="lesson-card"><h3>Applications</h3><p>Compression, réduction de dimension, pseudoinverse, résolution stable et analyse en composantes principales.</p></div>
+  <div class="lesson-card"><h3>Carte mentale finale</h3><p>Gauss révèle le rang ; le déterminant teste l’inversibilité ; les valeurs propres révèlent les directions invariantes ; SVD décrit toute transformation.</p></div>`}
+];
+var mode='function', ast=null, fn=null, symbolic=null, derivativeTrace=[], equationParts=null, animation=null, simValue=0, bars=18, linearChapter=0, linearMix=1;
 var expr=document.getElementById('expression'), params=document.getElementById('params'), error=document.getElementById('error'), canvas=document.getElementById('graph'), ctx=canvas.getContext('2d');
 function tokenize(s){
  var raw=[],i=0,m;
@@ -157,7 +232,29 @@ function rootsOf(f){var roots=[],lo=-10,hi=10,step=.04,px=lo,py=f(lo);for(var x=
 function val(id,def){var el=document.getElementById(id);var n=el?parseFloat(el.value):def;return isFinite(n)?n:def}
 function setSteps(items){document.getElementById('steps').innerHTML=items.map(function(x,i){return'<div class="step"><b>'+(i+1)+'</b><span>'+x+'</span></div>'}).join('')}
 function titleExpr(s){return s.replace(/\*/g,'·')}
-function solve(){error.textContent='';try{
+function matrixValues(){return{a:val('m11',2),b:val('m12',1),c:val('m21',1),d:val('m22',2),x:val('vx',1),y:val('vy',1)}}
+function renderLinear(){
+ var nav=document.getElementById('courseNav');nav.innerHTML=LINEAR_CHAPTERS.map(function(ch,i){return'<button class="'+(i===linearChapter?'active':'')+'" data-chapter="'+i+'">'+ch.short+'</button>'}).join('');
+ nav.querySelectorAll('button').forEach(function(b){b.onclick=function(){linearChapter=+b.dataset.chapter;renderLinear()}});
+ var ch=LINEAR_CHAPTERS[linearChapter],article=document.getElementById('lesson');
+ article.innerHTML='<div class="lesson-head"><div><div class="lesson-number">Chapitre '+(linearChapter+1)+' sur '+LINEAR_CHAPTERS.length+'</div><h2>'+ch.title+'</h2><p class="lesson-lead">'+ch.lead+'</p></div><div class="course-progress">'+String(linearChapter+1).padStart(2,'0')+' / '+String(LINEAR_CHAPTERS.length).padStart(2,'0')+'</div></div><div class="lesson-grid">'+ch.html+'<div class="lesson-card wide"><h3>Laboratoire de transformation 2D</h3><p>Modifie la matrice A et le vecteur v dans le panneau. Le carré jaune devient le parallélogramme bleu ; sa surface est multipliée par |det(A)|. La flèche montre Av.</p><div class="linear-visual"><canvas id="linearCanvas" aria-label="Simulation de la transformation linéaire par la matrice A"></canvas></div><div class="linear-note">Jaune : carré unité · Bleu : image par A · Flèche : image du vecteur v</div></div></div>';
+ document.getElementById('stageTitle').textContent=ch.title;drawLinear();
+}
+function solveLinear(){
+ var m=matrixValues(),det=m.a*m.d-m.b*m.c,tx=m.a*m.x+m.b*m.y,ty=m.c*m.x+m.d*m.y,tr=m.a+m.d,disc=tr*tr-4*det,eigs;
+ if(disc>=0){var s=Math.sqrt(disc);eigs='λ₁ = '+fmt((tr+s)/2)+' · λ₂ = '+fmt((tr-s)/2)}else eigs='λ = '+fmt(tr/2)+' ± '+fmt(Math.sqrt(-disc)/2)+'i';
+ var inv=Math.abs(det)>1e-10?'A⁻¹ = 1/'+fmt(det)+' · [['+fmt(m.d)+', '+fmt(-m.b)+'], ['+fmt(-m.c)+', '+fmt(m.a)+']]':'A n’est pas inversible (det = 0)';
+ document.getElementById('linearResult').innerHTML='<strong>Av = ('+fmt(tx)+', '+fmt(ty)+')</strong><br>det(A) = '+fmt(det)+'<br>'+eigs+'<br>'+inv;
+ drawLinear();
+}
+function drawLinear(){
+ var c=document.getElementById('linearCanvas');if(!c)return;var r=c.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);if(!r.width||!r.height)return;c.width=Math.floor(r.width*dpr);c.height=Math.floor(r.height*dpr);var g=c.getContext('2d');g.setTransform(dpr,0,0,dpr,0,0);var w=r.width,h=r.height,m=matrixValues(),mix=typeof linearMix==='number'?linearMix:1,a=1+(m.a-1)*mix,b=m.b*mix,cc=m.c*mix,dd=1+(m.d-1)*mix,scale=Math.min(w,h)/9,cx=w/2,cy=h/2;
+ function P(x,y){return[cx+x*scale,cy-y*scale]}function line(points,color,width,close){g.strokeStyle=color;g.lineWidth=width;g.beginPath();points.forEach(function(p,i){var q=P(p[0],p[1]);if(i)g.lineTo(q[0],q[1]);else g.moveTo(q[0],q[1])});if(close)g.closePath();g.stroke()}
+ g.fillStyle='#0d0e0c';g.fillRect(0,0,w,h);g.strokeStyle='#262820';g.lineWidth=1;for(var i=-5;i<=5;i++){var q=P(i,0);g.beginPath();g.moveTo(q[0],0);g.lineTo(q[0],h);g.stroke();q=P(0,i);g.beginPath();g.moveTo(0,q[1]);g.lineTo(w,q[1]);g.stroke()}line([[-5,0],[5,0]],'#55574f',1);line([[0,-5],[0,5]],'#55574f',1);
+ line([[0,0],[1,0],[1,1],[0,1]],'#f0c72f',2,true);line([[0,0],[a,cc],[a+b,cc+dd],[b,dd]],'#74c6da',2.5,true);
+ var vx=a*m.x+b*m.y,vy=cc*m.x+dd*m.y,end=P(vx,vy),start=P(0,0),ang=Math.atan2(start[1]-end[1],start[0]-end[0]);g.strokeStyle='#d8d7cf';g.fillStyle='#d8d7cf';g.lineWidth=2.2;g.beginPath();g.moveTo(start[0],start[1]);g.lineTo(end[0],end[1]);g.stroke();g.beginPath();g.moveTo(end[0],end[1]);g.lineTo(end[0]+10*Math.cos(ang-.45),end[1]+10*Math.sin(ang-.45));g.lineTo(end[0]+10*Math.cos(ang+.45),end[1]+10*Math.sin(ang+.45));g.closePath();g.fill();
+}
+function solve(){error.textContent='';if(mode==='linear'){solveLinear();return}try{
  var raw=expr.value.trim();if(!raw)throw Error('Écris une expression.');equationParts=null;symbolic=null;derivativeTrace=[];
  if(mode==='equation'){var q=raw.split('=');if(q.length!==2)throw Error('Écris une équation avec =');var l=compile(q[0]),r=compile(q[1]);fn=function(x){return l.fn(x)-r.fn(x)};equationParts=q;ast=l.ast}else{var c=compile(raw);ast=c.ast;fn=c.fn;if(mode==='derivative'){symbolic=simplify(differentiate(ast,derivativeTrace))}}
  var check=fn(.731);if(typeof check!=='number')throw Error('Expression invalide');updateResult();draw();
@@ -169,7 +266,11 @@ function updateResult(){var x0=val('x0',0),res='',lab='',steps=[],second='point 
  if(mode==='integral'){var a=val('a',0),b=val('b',3);var area=integrate(fn,a,b);lab='Aire algébrique';res='∫ ['+fmt(a)+' → '+fmt(b)+'] = '+fmt(area);steps=['Découper l’intervalle en bandes.','Additionner les aires signées.','Affiner les bandes vers la valeur '+fmt(area)+'.'];second='aire approchée'}
  if(mode==='limit'){var a=val('x0',0),h=simValue||.0001;var L=(fn(a-h)+fn(a+h))/2;var left=fn(a-h),right=fn(a+h);lab='Valeur approchée';res='lim x→'+fmt(a)+' f(x) ≈ '+fmt(L);steps=['Approcher '+fmt(a)+' par la gauche : '+fmt(left)+'.','Approcher '+fmt(a)+' par la droite : '+fmt(right)+'.','Comparer les deux valeurs.'];second='approche'}
  if(mode!=='derivative')third.hidden=true;document.getElementById('resultLabel').textContent=lab;document.getElementById('result').textContent=res;document.getElementById('legendSecond').textContent=second;setSteps(steps);document.getElementById('stageTitle').textContent=(mode==='equation'?'Résoudre : ':'f(x) = ')+titleExpr(expr.value)}
-function setMode(m){mode=m;var o=MODES[m];document.querySelectorAll('.mode-btn').forEach(function(b){b.classList.toggle('active',b.dataset.mode===m)});document.getElementById('expressionLabel').textContent=o.label;document.getElementById('prefix').textContent=o.prefix;document.getElementById('stageKicker').textContent=o.title;document.getElementById('rulebook').hidden=m!=='derivative';expr.value=o.value;params.innerHTML=o.params.map(function(p){return'<div class="field"><label for="'+p[0]+'">'+p[1]+'</label><input id="'+p[0]+'" type="number" step="any" value="'+p[2]+'"></div>'}).join('');document.getElementById('quickExamples').innerHTML=o.examples.map(function(v){return'<button class="chip" data-value="'+v.replace(/"/g,'&quot;')+'">'+v+'</button>'}).join('');document.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){expr.value=b.dataset.value;solve()}});params.querySelectorAll('input').forEach(function(i){i.addEventListener('input',solve)});simValue=0;bars=18;solve()}
+function setMode(m){
+ mode=m;var o=MODES[m],stage=document.querySelector('.stage');document.querySelectorAll('.mode-btn').forEach(function(b){b.classList.toggle('active',b.dataset.mode===m)});document.getElementById('stageKicker').textContent=o.title;document.getElementById('rulebook').hidden=m!=='derivative';document.getElementById('expressionBlock').hidden=m==='linear';params.hidden=m==='linear';document.getElementById('help').hidden=m==='linear';document.getElementById('linearControls').hidden=m!=='linear';stage.classList.toggle('linear-mode',m==='linear');document.getElementById('solve').textContent=m==='linear'?'Recalculer la transformation':'Calculer & visualiser';document.getElementById('simulate').querySelector('span').textContent=m==='linear'?'Transformer':'Simuler';
+ if(m==='linear'){fn=null;symbolic=null;linearMix=1;renderLinear();solveLinear();return}
+ document.getElementById('expressionLabel').textContent=o.label;document.getElementById('prefix').textContent=o.prefix;expr.value=o.value;params.innerHTML=o.params.map(function(p){return'<div class="field"><label for="'+p[0]+'">'+p[1]+'</label><input id="'+p[0]+'" type="number" step="any" value="'+p[2]+'"></div>'}).join('');document.getElementById('quickExamples').innerHTML=o.examples.map(function(v){return'<button class="chip" data-value="'+v.replace(/"/g,'&quot;')+'">'+v+'</button>'}).join('');document.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){expr.value=b.dataset.value;solve()}});params.querySelectorAll('input').forEach(function(i){i.addEventListener('input',solve)});simValue=0;bars=18;solve()
+}
 function sizeCanvas(){var r=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);if(canvas.width!==Math.floor(r.width*d)||canvas.height!==Math.floor(r.height*d)){canvas.width=Math.floor(r.width*d);canvas.height=Math.floor(r.height*d);ctx.setTransform(d,0,0,d,0,0)}return{w:r.width,h:r.height}}
 function draw(){var s=sizeCanvas(),w=s.w,h=s.h,style=getComputedStyle(document.documentElement),bg=style.getPropertyValue('--plot').trim(),grid=style.getPropertyValue('--plot-grid').trim(),ink=style.getPropertyValue('--plot-ink').trim(),accent=style.getPropertyValue('--accent').trim();ctx.clearRect(0,0,w,h);ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);var xmin=-10,xmax=10,samples=[],ymax=5;if(fn){for(var i=0;i<=400;i++){var x=xmin+(xmax-xmin)*i/400,y=fn(x);if(isFinite(y)&&Math.abs(y)<1e5)samples.push([x,y])}var ys=samples.map(function(p){return Math.abs(p[1])}).sort(function(a,b){return a-b});if(ys.length)ymax=Math.max(2,Math.min(15,ys[Math.floor(ys.length*.88)]*1.3||5))}var ymin=-ymax;
  function X(x){return(x-xmin)/(xmax-xmin)*w}function Y(y){return h-(y-ymin)/(ymax-ymin)*h}
@@ -180,8 +281,8 @@ function draw(){var s=sizeCanvas(),w=s.w,h=s.h,style=getComputedStyle(document.d
  var px=val('x0',0);if(mode==='function'&&simValue)px=simValue;if(mode==='derivative'&&simValue)px=simValue;if(mode==='limit')px=val('x0',0)+(simValue||.5);var py=fn(px);if(isFinite(py)){ctx.fillStyle='#74c6da';ctx.beginPath();ctx.arc(X(px),Y(py),5,0,Math.PI*2);ctx.fill();if(mode==='derivative'){var check=pointDerivative(fn,px,evaluate(symbolic,px),containsCall(ast,'abs')),span=3;if(check.ok){var d=check.value;ctx.strokeStyle='#d8d7cf';ctx.lineWidth=1.6;ctx.setLineDash([6,5]);ctx.beginPath();ctx.moveTo(X(px-span),Y(py-d*span));ctx.lineTo(X(px+span),Y(py+d*span));ctx.stroke();ctx.setLineDash([])}}}
  if(mode==='equation'){ctx.fillStyle='#74c6da';rootsOf(fn).forEach(function(r){ctx.beginPath();ctx.arc(X(r),Y(0),5,0,Math.PI*2);ctx.fill()})}
  document.getElementById('coord').textContent='x '+fmt(px)+' · y '+fmt(py)}
-function simulate(){if(animation){cancelAnimationFrame(animation);animation=null;document.getElementById('simulate').querySelector('span').textContent='Simuler';return}var start=performance.now(),dur=4200;document.getElementById('simulate').querySelector('span').textContent='Arrêter';function frame(now){var t=(now-start)/dur;if(t>=1){animation=null;simValue=0;bars=18;document.getElementById('simulate').querySelector('span').textContent='Simuler';updateResult();draw();return}if(mode==='integral')bars=3+Math.floor(t*57);else if(mode==='limit')simValue=Math.max(.0001,2*Math.pow(.003,t));else simValue=-6+12*t;updateResult();draw();animation=requestAnimationFrame(frame)}if(matchMedia('(prefers-reduced-motion: reduce)').matches){if(mode==='integral')bars=60;else if(mode==='limit')simValue=.0001;else simValue=2;updateResult();draw();return}animation=requestAnimationFrame(frame)}
-document.querySelectorAll('.mode-btn').forEach(function(b){b.onclick=function(){setMode(b.dataset.mode)}});document.getElementById('solve').onclick=solve;expr.addEventListener('keydown',function(e){if(e.key==='Enter')solve()});document.getElementById('simulate').onclick=simulate;window.addEventListener('resize',draw);canvas.addEventListener('pointermove',function(e){if(!fn)return;var r=canvas.getBoundingClientRect(),x=-10+(e.clientX-r.left)/r.width*20,y=fn(x);document.getElementById('coord').textContent='x '+fmt(x)+' · y '+fmt(y)});canvas.addEventListener('pointerleave',draw);setMode('function');
+function simulate(){var label=document.getElementById('simulate').querySelector('span'),idle=mode==='linear'?'Transformer':'Simuler';if(animation){cancelAnimationFrame(animation);animation=null;label.textContent=idle;return}var start=performance.now(),dur=4200;label.textContent='Arrêter';function frame(now){var t=(now-start)/dur;if(t>=1){animation=null;simValue=0;bars=18;linearMix=1;label.textContent=idle;if(mode==='linear')drawLinear();else{updateResult();draw()}return}if(mode==='integral')bars=3+Math.floor(t*57);else if(mode==='limit')simValue=Math.max(.0001,2*Math.pow(.003,t));else if(mode==='linear')linearMix=t;else simValue=-6+12*t;if(mode==='linear')drawLinear();else{updateResult();draw()}animation=requestAnimationFrame(frame)}if(matchMedia('(prefers-reduced-motion: reduce)').matches){if(mode==='integral')bars=60;else if(mode==='limit')simValue=.0001;else if(mode==='linear')linearMix=1;else simValue=2;if(mode==='linear')drawLinear();else{updateResult();draw()}label.textContent=idle;return}animation=requestAnimationFrame(frame)}
+document.querySelectorAll('.mode-btn').forEach(function(b){b.onclick=function(){setMode(b.dataset.mode)}});document.getElementById('solve').onclick=solve;expr.addEventListener('keydown',function(e){if(e.key==='Enter')solve()});document.querySelectorAll('#linearControls input').forEach(function(i){i.addEventListener('input',solveLinear)});document.getElementById('simulate').onclick=simulate;window.addEventListener('resize',function(){if(mode==='linear')drawLinear();else draw()});canvas.addEventListener('pointermove',function(e){if(!fn)return;var r=canvas.getBoundingClientRect(),x=-10+(e.clientX-r.left)/r.width*20,y=fn(x);document.getElementById('coord').textContent='x '+fmt(x)+' · y '+fmt(y)});canvas.addEventListener('pointerleave',draw);setMode('function');
 })();
 </script>
 </body>
